@@ -16,10 +16,7 @@
                     <input type="text" name="title" placeholder="Product Title" class="form-control">
                 </div>
                 <div class="col-md-2">
-                    <select name="variant" id="" class="form-control">
-                        <option selected disabled>--Select A Variant--</option>
-
-                    </select>
+                    {{ filter.form.variant }}
                 </div>
 
                 <div class="col-md-3">
@@ -35,6 +32,7 @@
                 <div class="col-md-2">
                     <input type="date" name="date" placeholder="Date" class="form-control">
                 </div>
+                
                 <div class="col-md-1">
                     <button type="submit" class="btn btn-primary float-right"><i class="fa fa-search"></i></button>
                 </div>

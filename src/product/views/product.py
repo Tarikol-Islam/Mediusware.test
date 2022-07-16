@@ -1,15 +1,24 @@
 import imp
+from itertools import product
+from multiprocessing import context
 from django.views import generic
 from django.views.generic import ListView
+from django.db.models import Q
+from ..filters import ProductFilter
+from product.models import Product
+from django_filters.views import FilterView
 
-from product.models import Variant,Product
-
-
-class ProductListView(ListView):
+class ProductListView(FilterView):
     model = Product
     paginate_by = 10 
-    context_object_name = 'Product'
     template_name='products/list.html'
+    filterset_class = ProductFilter
+
+      
+    
+    
+
+    
 
 class CreateProductView(generic.TemplateView):
     template_name = 'products/create.html'
