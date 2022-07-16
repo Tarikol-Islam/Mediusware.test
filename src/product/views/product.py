@@ -1,7 +1,15 @@
+import imp
 from django.views import generic
+from django.views.generic import ListView
 
-from product.models import Variant
+from product.models import Variant,Product
 
+
+class ProductListView(ListView):
+    model = Product
+    paginate_by = 10 
+    context_object_name = 'Product'
+    template_name='products/list.html'
 
 class CreateProductView(generic.TemplateView):
     template_name = 'products/create.html'
