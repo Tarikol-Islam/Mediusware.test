@@ -10,7 +10,7 @@ from django_filters.views import FilterView
 
 class ProductListView(FilterView):
     model = Product
-    paginate_by = 10 
+    paginate_by = 5
     template_name='products/list.html'
     filterset_class = ProductFilter
 
